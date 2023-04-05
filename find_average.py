@@ -3,13 +3,13 @@ from wordlesolver import wordlesolver
 from optimalsolver import optimalsolver
 from wordlegame import wordlegame
 from wordle_functions import *
+from tqdm import tqdm
 
 if __name__ == '__main__':
     all_answers = getAllAnswers()
     total = 0
-    for i, answer in enumerate(all_answers):
-        if i % 100 == 0:
-            print(i)
+    for i in tqdm(range(len(all_answers))):
+        answer = all_answers[i]
         game = wordlegame(answer)
         solver = optimalsolver('slate')
         moves = game.game_loop_solver(solver)
