@@ -76,9 +76,10 @@ class wordlegame:
         print()
         print("Thank you for playing!")
 
-    def game_loop_solver(self, solver=None):
+    def game_loop_solver(self, solver=None, show=False):
         """ a game loop for using the wordlesolver class """
-        print("the answer is:", self.answer)
+        if show:
+            print("the answer is:", self.answer)
 
         if not solver:
             solver = wordlesolver()
